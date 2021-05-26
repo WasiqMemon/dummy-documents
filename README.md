@@ -57,3 +57,7 @@ Since the application consists of optical character recognition, it was necessar
 - https://www.kaggle.com/selfvivek/environment-impact-of-food-production
 - https://resourcewatch.org/data/explore/Foo_046-Food-Footprint-in-Calories
 - https://www.programiz.com
+
+## Reference to Data Structure Used
+
+- https://github.com/satchamo/Scapegoat-Tree
