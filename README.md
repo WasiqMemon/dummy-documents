@@ -7,15 +7,17 @@
 - _Aliza_
 -------
 
-The final project for this course required implementation of assigned data strucuture using application.
+The final project for this course required implementation of assigned data structure using application.
 
 ## Youtube Demo Link
 
 ## Background
 
-Greenhouse emission is one the major crisis the world is facing at the moment caused by factors ranging from automotive, industrial machinery to agricultural practices. Therefore, and urgent demand for solution has risen. With this application we intend to help user identify the footprint consumption for their products and minimze it. 
+Greenhouse emission is one the major crisis the world is facing at the moment caused by factors ranging from automotive, industrial machinery to agricultural practices. Therefore, and urgent demand for solution has risen. With this application we intend to help user identify the footprint consumption for their products and minimize it. 
 
 ## ScapeGoat Trees
+
+Scapegoat trees are self-balancing binary search trees. The main idea of the structure is based on the concept of scapegoat. Scapegoat is literally defined as someone who is blamed for the wrongdoings of others. Few insert and delete operations can make the tree unbalanced and to rebalance the tree, scapegoat, a node, is searched. When the scapegoat is found the entire subtree rooted at the scapegoat can be rebuilt at zero cost, in an amortized sense. Scapegoat trees have O(log n) worst-case search time without storing any extra information like red-black trees. 
 
 ## Application
 
