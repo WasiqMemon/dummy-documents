@@ -1,6 +1,5 @@
 import math
 
-
 class Node():
     def __init__(self, key):
         self.key = key
@@ -118,21 +117,19 @@ class ScapeGoatTree():
 
         self.size -= 1
         if self.size < self.a * self.max_size:
-            # print "Rebuilding the whole tree"
+            #print "Rebuilding the whole tree"
             self.root = self.myRebuildTree(self.root, self.size)
             self.max_size = self.size
 
     def search(self, key):
-
         x = self.root
-        print(type(x.key))
         while x != None:
-            if x.key[0] > key:
+            if x.key > key:
                 x = x.left
-            elif x.key[0] < key:
+            elif x.key < key:
                 x = x.right
             else:
-                return x.key
+                return x
 
         return None
 
@@ -146,7 +143,7 @@ class ScapeGoatTree():
         parents = []
         # find where to place the node
         while x != None:
-            parents.insert(0, x)
+            parents.insert(0,x)
             y = x
             if z.key < x.key:
                 x = x.left
@@ -163,55 +160,31 @@ class ScapeGoatTree():
 
         self.size += 1
         self.max_size = max(self.size, self.max_size)
-
+        
         # Need to do rebuild?
         if self.isDeep(depth):
             scapegoat = None
-            parents.insert(0, z)
+            parents.insert(0,z)
             sizes = [0]*len(parents)
             I = 0
             # find the highest scapegoat on the tree
             for i in range(1, len(parents)):
-                sizes[i] = sizes[i-1] + \
-                    self.sizeOf(self.brotherOf(parents[i-1], parents[i])) + 1
+                sizes[i] = sizes[i-1] + self.sizeOf(self.brotherOf(parents[i-1], parents[i])) + 1
                 if not self.isAWeightBalanced(parents[i], sizes[i]+1):
                     scapegoat = parents[i]
                     I = i
-                    # print "When inserting %d Node %d is not weight balanced and could be a scapegoat" % (key, parents[I].key)
-
+                    #print "When inserting %d Node %d is not weight balanced and could be a scapegoat" % (key, parents[I].key)
+            
             tmp = self.myRebuildTree(scapegoat, sizes[I]+1)
-
+            
             scapegoat.left = tmp.left
             scapegoat.right = tmp.right
             scapegoat.key = tmp.key
-
+            
     def isAWeightBalanced(self, x, size_of_x):
         a = self.sizeOf(x.left) <= (self.a * size_of_x)
         b = self.sizeOf(x.right) <= (self.a * size_of_x)
         return a and b
-
-    # these procedures are from the paper and do not work
-    # def flatten(self, root, head):
-    #    if root == None:
-    #        return head
-    #    root.right = self.flatten(root.right, head)
-    #    return self.flatten(root.left, root)
-
-    # def buildTree(self, size, head):
-    #    if size == 1:
-    #        return head
-    #    elif size == 2:
-    #        (head.right).left = head
-    #        return head.right
-    #    root = (self.buildTree(math.floor((size-1)/2.0), head)).right
-    #    last = self.buildTree(math.floor((size-1)/2.0), root.right)
-    #    root.left = head
-    #    return last
-
-    # def rebuildTree(self, scapegoat, size):
-    #    head = self.flatten(scapegoat, None)
-    #    self.buildTree(size, head)
-    #    return head
 
     def preOrder(self, x):
         if x != None:
@@ -221,39 +194,3 @@ class ScapeGoatTree():
 
     def printTree(self):
         self.preOrder(self.root)
-
-
-if __name__ == '__main__':
-    import sys
-    import re
-    # Use tree.txt or command line for file
-    if len(sys.argv) > 1:
-        filename = sys.argv[1]
-    else:
-        filename = 'tree.txt'
-
-    f = open(filename, 'r')
-    t = None
-    for line in f.readlines():
-        line = re.split(r'\s+', line)
-        cmd = line[0]
-        if cmd == "BuildTree":
-            t = ScapeGoatTree(float(line[1]))
-            t.insert(int(line[2]))
-        elif cmd == "Insert":
-            t.insert(int(line[1]))
-        elif cmd == "Print":
-            t.printTree()
-        elif cmd == "Delete":
-            t.delete(int(line[1]))
-        elif cmd == "Done":
-            print("Exiting")
-            exit(0)
-        elif cmd == "Search":
-            val = t.search(int(line[1]))
-            if val != None:
-                print("Found %d" % (val.key))
-            else:
-                print("Error: Key %d not found" % (int(line[1])))
-        else:
-            print("Error: Command not recognized")
