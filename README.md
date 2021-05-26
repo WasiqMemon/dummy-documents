@@ -28,3 +28,10 @@ Greenhouse emission is one the major crisis the world is facing at the moment ca
 ## OCR Implementation
 
 ## Libraries Used
+
+## Application Usage
+
+- Upload Image: Loads image into program
+- Reset: Clear all entries
+- Add Item: Add additional ingredient to detected items
+- Calculate: Compute the footprint for the given food
