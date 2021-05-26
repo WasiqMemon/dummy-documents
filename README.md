@@ -35,6 +35,9 @@ The application will provide on the spot footprint calculator to allow user to c
 
 ## OCR Implementation
 
+Since the application consist of optical character recognition, it was necessary to perform certain image operations on images captured from the backside of the food products as to get optimized results in the tesseract library built-in functions for OCR. Therefore, image was processed with resize, filtering, binarization, and contrast which yeilded a better image compared to the raw one and therefore, the OCR was able to perform much better on this processed image.
+![alt text](https://github.com/WasiqMemon/dummy-documents/blob/main/comparision.png)
+
 ## Libraries Used
 
 ## References for Dataset Used
