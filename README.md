@@ -4,7 +4,7 @@
 - _Muhammad Ammar Khan_
 - _Ahsan Ali_
 - _Wasiq Hussain_
-- _Aliza_
+- _Aliza Rafique_
 -------
 
 The final project for this course required the implementation of the assigned data structure using the application.
@@ -48,7 +48,7 @@ Since the application consists of optical character recognition, it was necessar
 - Pillow
 - Numpy
 - Pandas
-
+- Tkinter
 
 
 ## References for Dataset Used
