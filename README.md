@@ -3,7 +3,7 @@
 # Group Members:
 - _Muhammad Ammar Khan_
 - _Ahsan Ali_
-- _Muhammad Wasiq_
+- _Wasiq Hussain_
 - _Aliza_
 -------
 
