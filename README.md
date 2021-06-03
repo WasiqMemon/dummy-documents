@@ -3,7 +3,7 @@
 
 The final project for this course required the implementation of the assigned data structure using the application.
 
-## Group Members:
+## Group Members
 - _Muhammad Ammar Khan_
 - _Ahsan Ali_
 - _Wasiq Hussain_
