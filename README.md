@@ -1,13 +1,13 @@
 # CS 201 Data Structures II, Spring 2021
 # Final Project: Footprint Calculator
-# Group Members:
+
+The final project for this course required the implementation of the assigned data structure using the application.
+
+## Group Members:
 - _Muhammad Ammar Khan_
 - _Ahsan Ali_
 - _Wasiq Hussain_
 - _Aliza Rafique_
--------
-
-The final project for this course required the implementation of the assigned data structure using the application.
 
 ## Youtube Demo Link
 
